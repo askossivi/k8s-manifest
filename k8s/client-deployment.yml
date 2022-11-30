@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+  namespace: full-stack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: full-stack
+  template:
+    metadata:
+      labels:
+        app: full-stack
+    spec:
+      containers:
+        - name: client
+          image: devtraining/client-app:latest
+          ports:
+            - containerPort: 3000
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: client-cluster-ip-service
+  name: client-cluster-ip-service
+  namespace: full-stack
+spec:
+  ports:
+  -  port: 3000
+     targetPort: 3000
+  selector:
+    app: full-stack
+  type: ClusterIP
