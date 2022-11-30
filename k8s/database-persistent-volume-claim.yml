@@ -20,6 +20,7 @@ metadata:
   name: database-persistent-volume-claim
   namespace: full-stack
 spec:
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
