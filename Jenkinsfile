@@ -19,7 +19,7 @@ node {
                         sh "cat k8s/postgres-deployment.yml"
                         sh "cat k8s/server-deployment.yml"
                         sh "sed -i 's+devtraining/server-app.*+devtraining/server-app:${DOCKERTAG}+g' k8s/server-deployment.yml"
-                        sh "sed -i 's+devtraining/client-app.*+devtraining/cliect-app:${DOCKERTAG}+g' k8s/client-deployment.yml"
+                        sh "sed -i 's+devtraining/client-app.*+devtraining/client-app:${DOCKERTAG}+g' k8s/client-deployment.yml"
                         sh "cat k8s/client-deployment.yml"
                         sh "cat k8s/postgres-deployment.yml"
                         sh "cat k8s/server-deployment.yml"
