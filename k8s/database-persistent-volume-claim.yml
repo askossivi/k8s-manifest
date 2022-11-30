@@ -1,3 +1,19 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: models-1-0-0
+  namespace: full-stack
+  labels:
+    app: models-1-0-0
+spec:
+  capacity:
+    storage: 3Gi
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+
+
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -8,4 +24,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 2Gi
+  selector:
+    matchLabels:
+      app: models-1-0-0
