@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: devtraining/server-app:latest
+          image: devtraining/server-app:7
           ports:
             - containerPort: 5000
           env:

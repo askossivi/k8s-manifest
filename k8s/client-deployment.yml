@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: devtraining/client-app:latest
+          image: devtraining/client-app:7
           ports:
             - containerPort: 3000
 
